@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { render } from 'react-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink } from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink } from '@apollo/client';
 
 import { Menu } from './components/Menu';
+import { SelectUser } from './components/SelectUser';
 
 const client = new ApolloClient({
     link: new createHttpLink(
@@ -38,12 +39,14 @@ query GetMenu {
 
 function MenuDetails() {
   const { data } = useQuery(MENU);
+  const [userId, setUserId] = useState(1);
 
   if (!data) return <p>Loading...</p>;
-  console.log('data.menu', data.menu)
+
   return (
     <>
-      <Menu menu={data.menu} />
+      <SelectUser onSelectUser={setUserId} />
+      <Menu menu={data.menu} userId={userId} />
     </>
   )
 }
@@ -51,7 +54,7 @@ function MenuDetails() {
 function App() {
     return (
       <>
-        <h1>Menu Test</h1>
+        <h1>Zoe's Menu</h1>
         <MenuDetails />
       </>
     );

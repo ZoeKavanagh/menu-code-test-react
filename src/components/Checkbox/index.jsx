@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export const Checkbox = ({ label }) => {
-  const [isChecked, setIsChecked] = useState(false)
-  
+export const Checkbox = ({ label, onSelection, isChecked }) => {
+
   return (
     <div className="checkbox">
       <label>
         <input
-            type="checkbox"
-            value={label}
-            checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
+          type="checkbox"
+          value={label}
+          checked={isChecked}
+          onChange={() => onSelection()}
         />
       </label>
     </div>

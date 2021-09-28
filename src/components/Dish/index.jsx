@@ -4,13 +4,13 @@ import { DishWrapper } from './styles';
 import { Checkbox } from '../Checkbox'
 
 
-export const Dish = ({ name, price }) => {
+export const Dish = ({ isChecked, name, price, onCourseSelect }) => {
 
   return (
     <>
       <DishWrapper>
         {name}: £{price}
-        <Checkbox label={name}/> 
+        <Checkbox label={name} isChecked={isChecked} onSelection={() => onCourseSelect()} /> 
       </DishWrapper>
     </>
   );
