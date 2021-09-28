@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink } from '@apollo/client'
 
+import { Menu } from './components/Menu';
+
 const client = new ApolloClient({
     link: new createHttpLink(
       { uri: 'http://localhost:3000/graphql' }
@@ -13,7 +15,7 @@ const client = new ApolloClient({
   });
 
 const MENU = gql`
-query GetStarters {
+query GetMenu {
   menu { 
     starters {
      id
@@ -34,44 +36,14 @@ query GetStarters {
 }
 `
 
-function Menu() {
+function MenuDetails() {
   const { data } = useQuery(MENU);
-  console.log('data: ', data?.menu?.starters)
 
   if (!data) return <p>Loading...</p>;
-
+  console.log('data.menu', data.menu)
   return (
     <>
-      <p>
-        Starters:
-      </p>
-    {data?.menu?.['starters']?.map(({ id, name, price }) => {
-      return (
-        <div key={id}>
-          <span>{name}:</span><span>£{price}</span>
-        </div>
-      )
-    })}
-    <p>
-        Mains:
-    </p>
-    {data?.menu?.['mains']?.map(({ id, name, price }) => {
-      return (
-        <div key={id}>
-          <span>{name}:</span><span>£{price}</span>
-        </div>
-      )
-    })}
-    <p>
-      Desserts:
-    </p>
-    {data?.menu?.['desserts']?.map(({ id, name, price }) => {
-      return (
-        <div key={id}>
-          <span>{name}:</span><span>£{price}</span>
-        </div>
-      )
-    })}
+      <Menu menu={data.menu} />
     </>
   )
 }
@@ -80,7 +52,7 @@ function App() {
     return (
       <>
         <h1>Menu Test</h1>
-        <Menu />
+        <MenuDetails />
       </>
     );
 }
