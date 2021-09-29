@@ -5,6 +5,7 @@ import { activeUserIdVar } from './cache'
 
 import { Menu } from './components/Menu';
 import { SelectUser } from './components/SelectUser';
+import { MenuHeader, AppContainter } from './styles'
 
 const client = new ApolloClient({
     link: new createHttpLink(
@@ -54,10 +55,10 @@ function MenuDetails() {
 
 function App() {
     return (
-      <>
-        <h1>Zoe's Menu</h1>
+      <AppContainter>
+        <MenuHeader>Zoe's Menu</MenuHeader>
         <MenuDetails />
-      </>
+      </AppContainter>
     );
 }
 
