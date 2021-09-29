@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { TotalWrapper } from './styles'
+
 
 export const Total = ({ amount }) => {
 
   return (
-    <div>Total: £{amount}</div>
+    <TotalWrapper>Total: £{amount.toFixed(2)}</TotalWrapper>
   )
 }
