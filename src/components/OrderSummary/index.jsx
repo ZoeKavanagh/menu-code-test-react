@@ -4,7 +4,7 @@ import { Label, OrderSummaryWrapper, SummaryDetail} from './styles'
 
 export const OrderSummary = ({ userOneSelection, userTwoSelection }) => {
   // TODO: within the OrderSummary I would have the ability to remove items from the selection using a mutation
-  // TODO: refactor to 
+  // TODO: refactor to remove alot of this duplicate code
   return (
     <OrderSummaryWrapper>
       <Label>Dinner One Order Items:</Label>
