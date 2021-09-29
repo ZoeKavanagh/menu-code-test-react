@@ -20,7 +20,7 @@ export const getErrorMessage = (user1Selection, user2Selection, setError) => {
   } else if (user1Selection.starters.id === FISH_STARTER_ID && user1Selection.mains.id === FISH_MAIN_ID) {
     return setError('Please do not upset our waiter Pierre, only order one fish course') 
     // Error for only one cheesecake left
-  }else if (user2Selection.desserts.id === LIMITED_DISH_ID && user1Selection.desserts.id === LIMITED_DISH_ID) {
+  } else if (user2Selection.desserts.id === LIMITED_DISH_ID && user1Selection.desserts.id === LIMITED_DISH_ID) {
     return setError('Sorry we only have one cheesecake left')
   } else {
     return setError(undefined)
