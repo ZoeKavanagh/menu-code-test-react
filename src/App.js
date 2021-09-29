@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { render } from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink, useReactiveVar } from '@apollo/client';
 import { activeUserIdVar } from './cache'
@@ -6,6 +7,8 @@ import { activeUserIdVar } from './cache'
 import { Menu } from './components/Menu';
 import { SelectUser } from './components/SelectUser';
 import { MenuHeader, AppContainter } from './styles'
+
+const theme = createTheme()
 
 const client = new ApolloClient({
     link: new createHttpLink(
@@ -55,10 +58,12 @@ function MenuDetails() {
 
 function App() {
     return (
-      <AppContainter>
-        <MenuHeader>Zoe's Menu</MenuHeader>
-        <MenuDetails />
-      </AppContainter>
+      <ThemeProvider theme={theme}>
+        <AppContainter>
+          <MenuHeader>Zoe's Menu</MenuHeader>
+          <MenuDetails />
+        </AppContainter>
+      </ThemeProvider>
     );
 }
 

@@ -28,7 +28,10 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".tsx", ".jsx", ".js", ".ts"],
+      extensions: [".tsx", ".jsx", ".js", ".ts"],
+      alias: {
+        "@material-ui/styled-engine": "@material-ui/styled-engine-sc",
+        }
     },
     output: {
         path: path.join(__dirname, '/public/webpack/'),
