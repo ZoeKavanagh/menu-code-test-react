@@ -6,7 +6,7 @@ export const OrderSummary = ({ userOneSelection, userTwoSelection }) => {
   // TODO: within the OrderSummary I would have the ability to remove items from the selection using a mutation
   // TODO: refactor to remove alot of this duplicate code
   return (
-    <OrderSummaryWrapper>
+    <OrderSummaryWrapper data-testid="order-summary">
       <Label>Dinner One Order Items:</Label>
       {userOneSelection.starters.name && <SummaryDetail>Starter: {userOneSelection.starters.name}: £{userOneSelection.starters.price.toFixed(2)}</SummaryDetail>}
       {userOneSelection.mains.name && <SummaryDetail>Main: {userOneSelection.mains.name}: £{userOneSelection.mains.price.toFixed(2)}</SummaryDetail>}

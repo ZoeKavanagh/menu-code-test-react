@@ -5,6 +5,6 @@ import { ErrorMessageWrapper } from './styles'
 
 export const ErrorMessage = ({ errorMessage }) => {
   return (
-    <ErrorMessageWrapper>{errorMessage}</ErrorMessageWrapper>
+    <ErrorMessageWrapper data-testid="error-message">{errorMessage}</ErrorMessageWrapper>
   )
 }

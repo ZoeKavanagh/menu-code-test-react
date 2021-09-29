@@ -22,7 +22,7 @@ export const Course = ({ courseType, courseDetails, onCourseSelect }) => {
 
   return (
     <>
-    <CourseWrapper>
+    <CourseWrapper data-testid={`${courseType}-course`}>
       <CourseName>
         {courseType.charAt(0).toUpperCase() + courseType.slice(1)}:
       </CourseName>

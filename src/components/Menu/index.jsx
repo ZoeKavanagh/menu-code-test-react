@@ -52,7 +52,7 @@ export const Menu = ({ menu, isUser1 }) => {
       <Course courseType={MAINS} courseDetails={mains} onCourseSelect={isUser1 ? updateUser1MenuSelection : updateUser2MenuSelection} />
       <Course courseType={DESSERTS} courseDetails={desserts} onCourseSelect={isUser1 ? updateUser1MenuSelection : updateUser2MenuSelection} />
       <Button label={'Save Selection'} onClick={() => setShowOrderSummary(true)}/>
-      {showOrderSummary && <OrderSummary userOneSelection={user1Selection} userTwoSelection={user2Selection} />}
+      {showOrderSummary && <OrderSummary data-testid="order-summary" userOneSelection={user1Selection} userTwoSelection={user2Selection} />}
       <Total amount={getAmount()} />
       {error && <ErrorMessage errorMessage={error} />}
     </>

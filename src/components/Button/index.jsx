@@ -4,6 +4,6 @@ import { ButtonWrapper } from './styles'
 
 export const Button = ({ onClick, label }) => {
   return (
-    <ButtonWrapper onClick={onClick}>{label}</ButtonWrapper>
+    <ButtonWrapper data-testid="button" onClick={onClick}>{label}</ButtonWrapper>
   )
 }
