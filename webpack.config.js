@@ -11,7 +11,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js?$/,
+                test: /\.js$|jsx/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -26,6 +26,12 @@ module.exports = {
                 ],
             },
         ],
+    },
+    resolve: {
+      extensions: [".tsx", ".jsx", ".js", ".ts"],
+      alias: {
+        "@material-ui/styled-engine": "@material-ui/styled-engine-sc",
+        }
     },
     output: {
         path: path.join(__dirname, '/public/webpack/'),

@@ -1,6 +1,7 @@
 const express = require('express');
 const { buildSchema } = require('graphql');
 const { graphqlHTTP } = require('express-graphql');
+const cors = require('cors')
 
 const menu = require('./static/menu-data.json');
 const gqlSchema = require('./static/gql-schema');
@@ -14,6 +15,7 @@ app.get('/api/v1/menu', (req, res) => {
 
 app.use(
     '/graphql',
+    cors(),
     graphqlHTTP({
         schema: buildSchema(gqlSchema),
         rootValue: { menu: () => menu },
@@ -22,6 +24,6 @@ app.use(
 );
 
 app.listen(port, () => {
-    console.log(`The API server is running at http://localhost:${port}/api`);
+    console.log(`The API server is running at http://localhost:${port}/api/v1/menu`);
     console.log(`The GraphQL server is running at http://localhost:${port}/graphql`);
 });
