@@ -2,7 +2,7 @@
 
 ## The task
 
-Welcome Zoe's Menu.
+Welcome to Zoe's Menu.
 
 Through using Zoe's Menu you will be able to:
 
