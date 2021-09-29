@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink, useReactiveVar } from '@apollo/client';
+import { activeUserIdVar } from './cache'
 
 import { Menu } from './components/Menu';
 import { SelectUser } from './components/SelectUser';
@@ -39,14 +40,14 @@ query GetMenu {
 
 function MenuDetails() {
   const { data } = useQuery(MENU);
-  const [userId, setUserId] = useState(1);
+  const userId = useReactiveVar(activeUserIdVar);
 
   if (!data) return <p>Loading...</p>;
 
   return (
     <>
-      <SelectUser onSelectUser={setUserId} />
-      <Menu menu={data.menu} userId={userId} />
+      <SelectUser />
+      <Menu menu={data.menu} isUser1={userId === 1} />
     </>
   )
 }
