@@ -8,7 +8,7 @@ import { activeUserIdVar } from '../../cache';
 
 
 export const SelectUser = () => {
-  const [anchorEl, setAnchorEl] = useState(null)
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const userId = useReactiveVar(activeUserIdVar);
 
