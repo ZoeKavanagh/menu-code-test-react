@@ -10,6 +10,8 @@ Through using Zoe's Menu you will be able to:
 -   View a menu that will be provided and may later require adjustment by a restaurant.
 -   Cleary see some restrictions provided by the restaurant. (see [#rules](#rules))
 
+But you can see for yourself here at this link: https://www.loom.com/share/7ff4463f46fb4210aa7c80f071ec33ba
+
 The menu data is served via GraphQL (http://localhost:3000/graphql). The client application is in `src/App.js`.
 
 ## Improvements / Changes if I had more time
