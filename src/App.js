@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { render } from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql, createHttpLink, useReactiveVar } from '@apollo/client';
 import { activeUserIdVar } from './cache'
+import { PRIMARY_USER_ID } from './constants'
 
 import { Menu } from './components/Menu';
 import { SelectUser } from './components/SelectUser';
@@ -51,7 +52,7 @@ function MenuDetails() {
   return (
     <>
       <SelectUser />
-      <Menu menu={data.menu} isUser1={userId === 1} />
+      <Menu menu={data.menu} isUserOne={userId === PRIMARY_USER_ID} />
     </>
   )
 }

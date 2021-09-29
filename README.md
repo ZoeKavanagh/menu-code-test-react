@@ -6,22 +6,28 @@ However, in this challenging time, we understand that not everyone has the luxur
 
 ## The task
 
-We would like you to build a web application.
+Welcome Zoe's Menu.
 
--   The application will allow one user to select dishes on behalf of two diners.
--   The application will present a menu that will be provided and may later require adjustment by a restaurant.
--   The application will enforce some restrictions provided by the restaurant. (see [#rules](#rules))
+Through using Zoe's Menu you will be able to:
 
-We have prepared a basic application structure for you using React and Webpack. Please add **any** additional libraries that you think are suitable, for example for data fetching, CSS, and testing.
+-   Select dishes on behalf of two diners.
+-   View a menu that will be provided and may later require adjustment by a restaurant.
+-   Enforces some restrictions provided by the restaurant. (see [#rules](#rules))
 
-The menu data is served via GraphQL (http://localhost:3000/graphql) or the API (http://localhost:3000/api/v1/menu). The client application is in `src/App.js`.
+The menu data is served via GraphQL (http://localhost:3000/graphql). The client application is in `src/App.js`.
 
-**IMPORTANT!** Please use either the GraphQL (preferred) or API approach to fetch menu data on your application, write as clean and maintainable code as possible, and make sure that it's covered by test cases.
+## Improvements / Changes if I had more time
 
+- I would like to have separated UserOne and UserTwo more through the component structure
+- Add unit tests for all components (I only had time to add a handful of tests for the Menu compoent)
+- Add some E2E tests
+- Enforce Typescript
+- Add a 'remove/delete' functionality specfic for each user item
+- Allow for more than on error to displayed at one time
+- Apply more styling
 ## Rules
 
-_To recap, you will build an interface that allows a user to select dishes for a fixed party of **two diners**._\
-This restaurant, unfortunately, has a number of rules about the meals that can be ordered.
+Rules that have been enforced within the application:
 
 -   Each person must have at least two courses, one of which must be a main.
 -   Each diner cannot have more than one of the same course.

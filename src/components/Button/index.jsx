@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { ButtonWrapper } from './styles'
+import { ButtonWrapper } from './styles';
 
 export const Button = ({ onClick, label }) => {
   return (

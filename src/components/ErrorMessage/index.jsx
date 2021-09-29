@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { ErrorMessageWrapper } from './styles'
-
+import { ErrorMessageWrapper } from './styles';
 
 export const ErrorMessage = ({ errorMessage }) => {
   return (

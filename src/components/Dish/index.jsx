@@ -1,11 +1,9 @@
 import React from 'react';
 import { DishWrapper, DishName, DishPrice } from './styles';
 
-import { Checkbox } from '../Checkbox'
-
+import { Checkbox } from '../Checkbox';
 
 export const Dish = ({ isChecked, name, price, onCourseSelect }) => {
-
   return (
     <>
       <DishWrapper data-testid={`${name}-dish-checkbox`}>
